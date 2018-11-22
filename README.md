@@ -1,0 +1,2 @@
+# TypeSTp
+tp typeScript
