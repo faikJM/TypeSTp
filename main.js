@@ -1,0 +1,73 @@
+"use strict";
+//Classe main
+Object.defineProperty(exports, "__esModule", { value: true });
+//importations de classes
+var Task_1 = require("./Task");
+var project_1 = require("./project");
+var date_1 = require("./date");
+//Tests sur la classe date
+var Dat = new date_1.default(2020, 11, 4);
+var affich1 = Dat.toString();
+console.log(affich1);
+var affich2 = Dat.Create();
+console.log(affich2);
+var affichSet = Dat.setDate(2018, 11, 25);
+console.log(affichSet);
+var affichYest = Dat.yesterday();
+console.log(affichYest);
+var affichTomo = Dat.yesterday();
+console.log(affichTomo);
+var affichADay = Dat.addDay(2);
+console.log(affichADay);
+var affichSDay = Dat.subDay();
+console.log(affichSDay);
+var affichAMonth = Dat.addMonth();
+console.log(affichAMonth);
+var affichSMonth = Dat.subMonth(3);
+console.log(affichSMonth);
+var affichAYear = Dat.addYear(4);
+console.log(affichAYear);
+var affichSYear = Dat.subYear(4);
+console.log(affichSYear);
+//Tests sur la classe Priority
+var priori = 1;
+//Tests sur la classe task
+var taches = new Task_1.default("finir tp typeScripts", Dat, priori, false);
+var afiTask1 = Task_1.default.toString();
+console.log(afiTask1);
+var IDTach = taches.add("finir tp typeScript", Dat, priori);
+console.log(IDTach);
+priori = 2;
+taches.update("Finir calculatrice avec Ionic", Dat, priori, false);
+var afiTask2 = Task_1.default.toString();
+console.log(afiTask2);
+taches.close;
+Dat.addDay(7);
+var afiTask3 = Task_1.default.toString();
+console.log(afiTask3);
+//Tests sur la classe projet
+var TabTask;
+Dat.addDay(4);
+TabTask[1]._content = "cours android";
+TabTask[1]._date = Dat;
+TabTask[1]._priority = 1;
+TabTask[1]._checked = true;
+Dat.addDay(8);
+TabTask[1]._content = "cours linux";
+TabTask[1]._date = Dat;
+TabTask[1]._priority = 2;
+TabTask[1]._checked = false;
+Dat.addDay(12);
+TabTask[1]._content = "expose Ionic";
+TabTask[1]._date = Dat;
+TabTask[1]._priority = 3;
+TabTask[1]._checked = true;
+Dat.addDay(17);
+TabTask[1]._content = "GDG fest";
+TabTask[1]._date = Dat;
+TabTask[1]._priority = 3;
+TabTask[1]._checked = false;
+var proJ = new project_1.default(TabTask);
+Dat.addDay(1);
+var NewTac = new Task_1.default("manger", Dat, priori, false);
+proJ.addtask(TabTask, NewTac);
